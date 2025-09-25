@@ -224,6 +224,31 @@ Contributions are welcome! Please:
 4. Test thoroughly on your device
 5. Submit a pull request
 
+## tested on below system on android 12 
+OnePlus9:/ $ dumpsys package com.google.android.apps.messaging | grep version
+    versionCode=289151063 minSdk=26 targetSdk=36
+    versionName=messages.android_20250907_01_RC00.phone_dynamic
+    signatures=PackageSignatures{735bbed version:3, signatures:[658fb6d4], past signatures:[]}
+    versionCode=118032063 minSdk=21 targetSdk=31
+    versionName=messages.android_20220214_00_RC02.phone_dynamic
+    signatures=PackageSignatures{8bd1270 version:0, signatures:[], past signatures:[]}
+
+
+## commands to know UI 
+
+adb shell uiautomator dump
+adb pull /sdcard/window_dump.xml
+
+launch app 
+
+adb shell am start -n com.google.android.apps.messaging/.ui.ConversationListActivity
+
+simulate tap 
+
+adb shell input tap 700 300
+
+
+
 ## Version History
 
 - **v2.1**: Fixed ViewClient method calls, improved navigation reliability
